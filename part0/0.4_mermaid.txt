@@ -1,0 +1,14 @@
+sequenceDiagram
+    Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Server-->Browser: status code 302
+    note over Browser: Server to Browser asks HTTP GET request to the address defined in response header's location
+
+    Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Server-->Browser: HTML
+    Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->Browser: main.css
+    Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server-->Browser: main.js
+
+    Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->Browser: [{ content: "Rajat Chandra", date: "2024-01-12" }, ...]

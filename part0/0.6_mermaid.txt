@@ -1,0 +1,7 @@
+sequenceDiagram
+    title 0.6 - New Note
+
+    note over Browser: New Note added to the list & Page Re-Renders
+    Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+    Server-->Browser: Status Code 201
